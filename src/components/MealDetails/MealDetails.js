@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
 const MealDetails = () => {
     const meal = useLoaderData().meals[0];
     console.log(meal)
-    const { idMeal, strMealThumb, strMeal, strInstructions } = meal;
+    const { strMealThumb, strMeal, strInstructions } = meal;
     return (
         <div className='flex justify-center mt-10 p-5'>
             <div>
