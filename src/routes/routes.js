@@ -10,7 +10,13 @@ const router = createBrowserRouter([
         path: '/', element: <Main></Main>, children: [
             { path: '/home', element: <Home></Home> },
             { path: '/about', element: <About></About> },
-            { path: '/restaurant', element: <Restaurant></Restaurant> },
+            {
+                path: '/restaurant',
+                loader: async () => {
+                    return fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=fish');
+                },
+                element: <Restaurant></Restaurant>
+            },
             { path: '*', element: <Error></Error> },
         ]
     },
