@@ -1,8 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Meal = ({ meal }) => {
     const { idMeal, strMealThumb, strMeal, strInstructions } = meal;
+
+    const navigate = useNavigate();
+    const handleNavigate = () => {
+        navigate(`/restaurant/food-${idMeal}`);
+    }
+
     return (
         <div className='border-2 rounded-lg p-5'>
             <img className='rounded-lg' src={strMealThumb} alt={strMealThumb} />
@@ -14,6 +20,8 @@ const Meal = ({ meal }) => {
                 <button className='bg-blue-600 text-white px-4 py-1 hover:bg-blue-700
                 '>see more btn</button>
             </Link>
+            <button onClick={handleNavigate} className='bg-rose-600 text-white w-full mt-5 px-4 py-1 hover:bg-rose-700
+                '>see details</button>
         </div>
     );
 };
