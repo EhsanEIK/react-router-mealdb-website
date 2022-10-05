@@ -8,7 +8,7 @@ const Restaurant = () => {
     return (
         <div className='container mx-auto mb-10'>
             <h2 className='text-3xl text-center mt-5 mb-10'>Welcome to the Restaurant</h2>
-            <div className='grid grid-cols-4 gap-5'>
+            <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5'>
                 {
                     allMeal.map(meal => <Meal
                         key={meal.idMeal}
